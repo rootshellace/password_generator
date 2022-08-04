@@ -33,10 +33,10 @@ main_msg_label = tkinter.ttk.Label(window_content, text=' Use this tool to gener
 main_msg_label.grid(row=2, column=0, columnspan=5, pady=10)
 
 
-chars_used_label = tkinter.ttk.Label(window_content, text='Password Characters:', font=('Calibri', 10),
+chars_used_label = tkinter.ttk.Label(window_content, text='Password Chars:', font=('Calibri', 10),
 										justify=tkinter.CENTER, background='red', foreground='black')
 #chars_used_label.grid(row=3, column=0, padx=10, pady=20, ipadx=5, ipady=2)
-chars_used_label.grid(row=3, column=0, padx=5, pady=20, ipadx=2, ipady=2)
+chars_used_label.grid(row=3, column=0, padx=5, pady=20, ipadx=2, ipady=2, sticky=tkinter.E)
 
 upper_char_val = tkinter.IntVar()
 lower_char_val = tkinter.IntVar()
@@ -48,20 +48,20 @@ lower_char_checkbox = tkinter.ttk.Checkbutton(window_content, text='Use lowercas
 numeric_char_checkbox = tkinter.ttk.Checkbutton(window_content, text='Use numbers', onvalue=1, offvalue=0, variable=numeric_char_val)
 symbol_char_checkbox = tkinter.ttk.Checkbutton(window_content, text='Use symbols', onvalue=1, offvalue=0, variable=symbol_char_val)
 
-upper_char_checkbox.grid(row=3, column=1, padx=2, ipadx=2, ipady=2)
-lower_char_checkbox.grid(row=3, column=2, padx=2, ipadx=2, ipady=2)
-numeric_char_checkbox.grid(row=3, column=3, padx=2, ipadx=2, ipady=2)
-symbol_char_checkbox.grid(row=3, column=4, padx=2, ipadx=10, ipady=2)
+upper_char_checkbox.grid(row=3, column=1, padx=2, ipadx=2, ipady=2, sticky=tkinter.W)
+lower_char_checkbox.grid(row=3, column=2, padx=2, ipadx=2, ipady=2, sticky=tkinter.W)
+numeric_char_checkbox.grid(row=3, column=3, padx=2, ipadx=2, ipady=2, sticky=tkinter.W)
+symbol_char_checkbox.grid(row=3, column=4, padx=2, ipadx=10, ipady=2, sticky=tkinter.W)
 
-pass_length_label = tkinter.ttk.Label(window_content, text='Password Length:', font=('Calibri', 10),
+pass_length_label = tkinter.ttk.Label(window_content, text='Length - Max 50:', font=('Calibri', 10),
 										background='red', foreground='black')
 pass_length_label.grid(row=4, column=0, ipadx=2, padx=5, sticky=tkinter.E)
 
 selected_pass_length = tkinter.StringVar()
 
-pass_small_option = tkinter.ttk.Radiobutton(window_content, text='8-12 Chars', value=random.randint(0, 9), variable=selected_pass_length)
-pass_medium_option = tkinter.ttk.Radiobutton(window_content, text='13-16 Chars', value=random.randint(9, 13), variable=selected_pass_length)
-pass_custom_option = tkinter.ttk.Radiobutton(window_content, text='Specify No.', value=random.randint(13, 17), variable=selected_pass_length)
+pass_small_option = tkinter.ttk.Radiobutton(window_content, text='8-12 chars', value=random.randint(0, 9), variable=selected_pass_length)
+pass_medium_option = tkinter.ttk.Radiobutton(window_content, text='13-16 chars', value=random.randint(9, 13), variable=selected_pass_length)
+pass_custom_option = tkinter.ttk.Radiobutton(window_content, text='Custom no. :', value=random.randint(13, 17), variable=selected_pass_length)
 
 pass_small_option.grid(row=4, column=1, sticky=tkinter.W, padx=2, ipadx=2, ipady=2)
 pass_medium_option.grid(row=4, column=2, sticky=tkinter.W, padx=2, ipadx=2, ipady=2)
@@ -69,6 +69,19 @@ pass_custom_option.grid(row=4, column=3, sticky=tkinter.W, padx=2, ipadx=2, ipad
 
 pass_custom_entry = tkinter.ttk.Entry(window_content, width=5, state=tkinter.DISABLED)
 pass_custom_entry.grid(row=4, column=4, sticky=tkinter.W)
+
+generated_password_entry = tkinter.ttk.Entry(window_content, state=tkinter.ACTIVE, justify=tkinter.CENTER,
+											cursor='xterm', width=40)
+generated_password_entry.grid(row=5, column=1, columnspan=3, padx=10, pady=15)
+
+reset_button = tkinter.ttk.Button(window_content, text='Reset')
+reset_button.grid(row=6, column=1, padx=10, pady=5)
+
+generate_button = tkinter.ttk.Button(window_content, text='Generate')
+generate_button.grid(row=6, column=2, padx=10, pady=5)
+
+quit_button = tkinter.ttk.Button(window_content, text='Quit')
+quit_button.grid(row=6, column=3, padx=10, pady=5)
 
 #chars_used_frame = tkinter.ttk.LabelFrame(window_content, text="Password Character Options") #, width=360, height=120)
 #chars_used_frame = tkinter.Frame(window_content) #, width=360, height=120)
