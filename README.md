@@ -3,12 +3,11 @@ A Python program that helps you generate a random password!
 
 Characters that can be used
 
-You have the option to use in the generated password the following:
-
--> uppercase characters
--> lowercase characters
--> numeric characters
--> symbol characters
+You have the option to use in the generated password any combination
+of uppercase characters, lowercase characters, numeric characters or
+symbol characters. If you don't choose any and will press generate,
+you will get a pop-up letting you know that you didn't select anything
+and lowercase will be set as default option.
 
 Password length
 
